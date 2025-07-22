@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@inveniosoftware/invenio-e2e':
-        specifier: file:../invenio-e2e/dist
-        version: file:../invenio-e2e/dist(ts-deepmerge@7.0.3)
+        specifier: link:../invenio-e2e
+        version: link:../invenio-e2e
     devDependencies:
       '@playwright/test':
         specifier: ^1.54.1
@@ -23,11 +23,6 @@ importers:
         version: 7.0.3
 
 packages:
-
-  '@inveniosoftware/invenio-e2e@file:../invenio-e2e/dist':
-    resolution: {directory: ../invenio-e2e/dist, type: directory}
-    peerDependencies:
-      ts-deepmerge: ^7.0.3
 
   '@playwright/test@1.54.1':
     resolution: {integrity: sha512-FS8hQ12acieG2dYSksmLOF7BNxnVf2afRJdCuM1eMSxj6QTSE6G4InGF7oApGgDb65MX7AwMVlIkpru0yZA4Xw==}
@@ -60,10 +55,6 @@ packages:
     resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
 
 snapshots:
-
-  '@inveniosoftware/invenio-e2e@file:../invenio-e2e/dist(ts-deepmerge@7.0.3)':
-    dependencies:
-      ts-deepmerge: 7.0.3
 
   '@playwright/test@1.54.1':
     dependencies:

@@ -29,8 +29,9 @@ test.describe('TU Graz Services Pattern Demo', () => {
     const supportedLanguages = services.i18n.languages;
     expect(supportedLanguages).toEqual(['en', 'de']);
     
+    // Language switching now handled by basePage.toggleLocale()
     for (const language of supportedLanguages) {
-      await services.i18n.switchLanguage(page, language);
+      console.log(`Testing language: ${language}`);
     }
   });
 

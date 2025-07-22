@@ -40,4 +40,5 @@ export const tuGrazConfig: ServiceConfig = {
 };
 
 export const test = createServiceTest(tuGrazConfig, tugrazLocators);
-export { expect } from '@playwright/test'; 
+export const { expect } = test;
+export { expect as baseExpect } from '@playwright/test'; 

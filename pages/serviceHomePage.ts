@@ -24,12 +24,8 @@ export class ServiceHomePage<L extends Locators = Locators> extends HomePage<L> 
   protected services: Services;
 
   async switchLanguage(language: string) {
-    if (this.services?.i18n && this.services.i18n.languages.includes(language)) {
-      await this.services.i18n.switchLanguage(this.page, language);
-      await this.page.waitForLoadState('networkidle');
-    } else {
-      console.warn(`Language '${language}' not supported by ${this.services.repository.name}`);
-    }
+    // BasePage.toggleLocale for actual UI interaction
+    await this.toggleLocale(language);
   }
 
   async getLocalizedTitle(): Promise<string> {

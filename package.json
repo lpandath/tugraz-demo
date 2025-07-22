@@ -13,6 +13,6 @@
     "ts-deepmerge": "^7.0.3"
   },
   "dependencies": {
-    "@inveniosoftware/invenio-e2e": "file:../invenio-e2e/dist"
+    "@inveniosoftware/invenio-e2e": "link:../invenio-e2e"
   }
 }
