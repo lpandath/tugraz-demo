@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@inveniosoftware/invenio-e2e':
         specifier: file:../invenio-e2e/dist
-        version: file:../invenio-e2e/dist(@playwright/test@1.54.1)(ts-deepmerge@7.0.3)
+        version: file:../invenio-e2e/dist(@playwright/test@1.54.1)(i18next@25.3.2)(ts-deepmerge@7.0.3)
     devDependencies:
       '@playwright/test':
         specifier: ^1.54.1
@@ -32,6 +32,7 @@ packages:
     resolution: {directory: ../invenio-e2e/dist, type: directory}
     peerDependencies:
       '@playwright/test': ^1.54.1
+      i18next: ^25.3.2
       ts-deepmerge: ^7.0.3
 
   '@playwright/test@1.54.1':
@@ -76,13 +77,11 @@ snapshots:
 
   '@babel/runtime@7.27.6': {}
 
-  '@inveniosoftware/invenio-e2e@file:../invenio-e2e/dist(@playwright/test@1.54.1)(ts-deepmerge@7.0.3)':
+  '@inveniosoftware/invenio-e2e@file:../invenio-e2e/dist(@playwright/test@1.54.1)(i18next@25.3.2)(ts-deepmerge@7.0.3)':
     dependencies:
       '@playwright/test': 1.54.1
       i18next: 25.3.2
       ts-deepmerge: 7.0.3
-    transitivePeerDependencies:
-      - typescript
 
   '@playwright/test@1.54.1':
     dependencies:

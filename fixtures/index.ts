@@ -17,13 +17,16 @@ const tugrazExcludes = [
 ];
 
 export const test = invenio_test.extend({
-    // Replace the locators within invenio-e2e with customized ones
-    locators: updateLocators(locators),
+  // Replace the locators within invenio-e2e with customized ones
+  locators: updateLocators(locators),
 
-    // Specific excludes for translation
-    excludes: tugrazExcludes,
+  // Specific excludes for translation
+  excludes: tugrazExcludes,
 
-    // Replace the homepage with the extended one that does better validation on
-    // our page
-    ...registerPage('homePage', ExtendedHomePage),
+  // translatableSelectors are inherited from invenio-e2e
+  // only override if tugraz needs different selectors
+
+  // Replace the homepage with the extended one that does better validation on
+  // our page
+  ...registerPage("homePage", ExtendedHomePage),
 });

@@ -14,35 +14,34 @@ test.describe('TU Graz Repository translation testing', () => {
   test('Diff-based testing: Find untranslated content using mentor\'s approach', async ({ homePage }) => {
     await homePage.openPage();
     
-    const captureOptions = {
-      minWordLength: 3,  // skip very short words
-      wordPattern: /^[a-zA-ZÀ-ÿäöüÄÖÜß]/, // include German characters
+    // test with words mode to see the difference
+    const wordsOptions = {
+      minWordLength: 3,
+      wordPattern: /^[a-zA-ZÀ-ÿäöüÄÖÜß]/,
+      captureMode: 'words' as const
     };
     
-    await homePage.expectTranslation("en", "de", captureOptions);
+    await homePage.expectTranslation("en", "de", wordsOptions);
+    
+    // Test with chunks mode (default)  
+    await homePage.expectTranslation("en", "de");
   });
 
   test('Combined approach: use both methods for testing', async ({ homePage, i18nService }) => {
     await homePage.openPage();
-    
-    console.log('\n=== TRANSLATION TESTING ===');
     
     await homePage.expectElementTranslations(
       "de",
       "invenio-app-rdm-messages"
     );
     
-    console.log('\n--- Finding translation gaps ---');
     await homePage.expectTranslation("en", "de");
     
-    console.log('\n--- Verifying language switching ---');
     await i18nService.switchLocale('en');
     await homePage.expectLogoVisible();
     
     await i18nService.switchLocale('de');
     await homePage.expectLogoVisible();
-    
-    console.log('All translation testing approaches completed');
   });
 
 }); 
